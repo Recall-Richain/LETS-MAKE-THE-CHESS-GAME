@@ -1,13 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     const chessboard = document.getElementById("chessboard");
-
-    // Function to create the chessboard
     function createChessboard() {
-        for (let i = 0; i < 64; i++) {
-            const square = document.createElement("div");
-            square.className = "square";
-            chessboard.appendChild(square);
+        let chessboardString = ''; 
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
+                
+                if (j % 2 === 0) {
+                    chessboardString += '#';
+                } else {
+                    chessboardString += '0';
+                }
+            }
+            chessboardString += '\n'; 
         }
+        console.log(chessboardString); 
     }
 
     createChessboard();
